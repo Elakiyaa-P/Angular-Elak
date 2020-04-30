@@ -1,0 +1,37 @@
+<body style="background-color: khaki">
+    <div style="text-align: center">
+        <h1>
+            Welcome Super Admin!!
+        </h1>
+        
+        <h2>Product List</h2>
+        <!-- <img width="300" alt="Angular Logo" -->
+            <!-- src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"> -->
+        <table border="2" align="center">
+            <thead>
+                <th> Product Name </th>
+                <th> Product Price </th>
+                <!-- <th> Description </th> -->
+                <th> Manufacturing Date </th>
+                <!-- <th> Expiring Date </th> -->
+                <th> Quantity </th> 
+            </thead>
+            
+            <tbody>
+                <tr *ngFor = "let product of products">
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency:"INR":true}}</td>
+                    <!-- <td>{{product.description}}</td> -->
+                    <td>{{todayString | date}}</td>
+                    <!-- <td>{{todayString | date</td> -->
+                    <td>{{product.quantity}}</td>
+                </tr>
+            </tbody>
+        </table><br>
+        <p>
+            <button (click)="logout()">
+                Logout
+            </button>
+        </p>
+    </div>
+</body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form #signupForm="ngForm">
+        <fieldset>
+            <legend> Sign Up</legend>
+    
+            <!-- Email block  -->
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="text" required [(ngModel)]="user.email" id="inputEmail" name="email" placeholder="Email">
+            </div>
+    
+            <!-- Password Block  -->
+            <div ngModelGroup="password">
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" required [(ngModel)]="user.password.pwd" name="pwd" placeholder="Password">
+                </div>
+    
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" required [(ngModel)]="user.password.confirmPwd" name="confirmPwd" placeholder="ConfirmPassword">
+                </div>
+            </div>
+    
+            <!-- Select Gender Block  -->
+            <div class="form-group">
+                <label for="select">Gender</label>
+                <select id="select" required [(ngModel)]="user.gender" name="gender">
+                    <option *ngFor="let g of gender" [value]="g">
+                        {{g}}
+                    </option>
+                </select>
+            </div>
+    
+            <!-- Terms and Conditions -->
+            <div class="form-group checkbox">
+                <label>
+                    <input type="checkbox" [(ngModel)]="user.terms" name="terms">
+                    Confirm that you've read the Terms and Conditions
+                </label>
+            </div>
+    
+            <!-- Buttons Block  -->
+            <div class="form-group">
+                <button type="reset">Cancel</button>&nbsp;&nbsp;
+                <input type="submit" [disabled]=!signupForm.valid>
+            </div>
+    
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
+<!-- {{user|JSON}} -->

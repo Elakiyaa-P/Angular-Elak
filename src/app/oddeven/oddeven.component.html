@@ -1,0 +1,10 @@
+<!-- <p>oddeven works!</p> -->
+<h1>Odd or Even</h1>
+<div *ngFor= "let id of ids">
+    <div *ngIf= "id%2==0">
+        {{id}} is Even Number
+    </div>
+    <div *ngIf="id%2==1">
+        {{id}} is Odd Number
+    </div>
+</div>
